@@ -1,9 +1,12 @@
-"""Запуск приложения"""
+"""
+Application entry point
+"""
 
 
 class App:
-    """Хранилище основных компонентов системы,
-    реализация логики приложения"""
+    """
+    Finger drawing application
+    """
 
     def __init__(self) -> None:
         pass
