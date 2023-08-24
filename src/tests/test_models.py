@@ -48,7 +48,6 @@ def test_model_inference() -> None:
                 5,
                 color=(255, 255, 255),
             )
-        cv.imshow("Test example", bgr_input_image)
         cv.imwrite(cfg["output"]["path"], bgr_input_image)
         assert landmarks.shape[0] == 21
         assert landmarks.shape[1] == 2
