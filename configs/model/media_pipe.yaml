@@ -1,0 +1,2 @@
+model_type: MediaPipeHandDetector
+task_path: "models/hand_landmarker.task"

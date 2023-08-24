@@ -1,0 +1,4 @@
+defaults:
+- model: media_pipe
+- input: test
+- output: test
