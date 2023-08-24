@@ -2,7 +2,7 @@
 name = "finger_drawing"
 version = "0.1.0"
 description = ""
-authors = ["Danil [danil5678444@gmail.com]"]
+authors = ["Danil <danil5678444@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
