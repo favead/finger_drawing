@@ -6,6 +6,8 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import numpy as np
 
+from finger_drawing.utils import get_absolute_path
+
 
 class MediaPipeHandDetector:
     """
@@ -13,7 +15,7 @@ class MediaPipeHandDetector:
     """
 
     def __init__(self, task_path: str, **kwargs) -> None:
-        self.task_path = task_path
+        self.task_path = get_absolute_path(task_path)
         self.detector = self._create_hand_detector()
 
     def _create_hand_detector(self) -> vision.HandLandmarker:
@@ -35,6 +37,8 @@ class MediaPipeHandDetector:
         mediapipe_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=image)
         detection_result = self.detector.detect(mediapipe_image)
         hand_landmarks_list = detection_result.hand_landmarks
+        if len(hand_landmarks_list) == 0:
+            return np.empty((0, 2))
         x_coordinates = np.array(
             [int(landmark.x * W) for landmark in hand_landmarks_list[0]]
         ).reshape(-1, 1)
