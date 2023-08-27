@@ -2,3 +2,4 @@ defaults:
 - model: media_pipe
 - input: test
 - output: test
+- video_handler: webcam
