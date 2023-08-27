@@ -97,3 +97,6 @@ models/*
 
 # Poetry stuff
 poetry.lock
+
+# Hydra stuff
+outputs/
